@@ -19,14 +19,10 @@ def should_ignore(
     Returns:
         bool: True if the vulnerability should be ignored.
     """
-    per_type = any([
-        True if identifier['name'] in ignored_identifiers else False
-        for identifier in vulnerability['identifiers']
-    ])
-    per_path = any([
-        True if vulnerability['location']['file'].startswith(path) else False
-        for path in ignored_files
-    ])
+    per_type = any(True if identifier['name'] in ignored_identifiers else False
+        for identifier in vulnerability['identifiers'])
+    per_path = any(True if vulnerability['location']['file'].startswith(path) else False
+        for path in ignored_files)
     return any([per_type, per_path])
 
 
