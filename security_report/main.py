@@ -254,7 +254,7 @@ def security_report(
     print(f'Total Found\t{len(vulnerabilities_raw)}')
     print(f'Ignored\t\t{len(ignored)}')
     print(f'Filtered\t{len(vulnerabilities)}')
-    print(f'Reasons:')
+    print('Reasons:')
     for reason in reasons:
         print(f'- {reason}')
     print('-' * 50)
